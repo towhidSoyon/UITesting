@@ -1,0 +1,76 @@
+package com.example.a2uitesting.ModernDashboard;
+
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.a2uitesting.R;
+
+import java.util.List;
+
+public class StaticRVAdapter extends RecyclerView.Adapter<StaticRVAdapter.StaticRVViewHolder>  {
+
+    private List<StaticRVModel> models;
+    int row_index=-1;
+
+    public StaticRVAdapter(List<StaticRVModel> models) {
+        this.models = models;
+    }
+
+    @NonNull
+    @Override
+    public StaticRVViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.staticrv_singel_item,parent,false);
+        return new StaticRVViewHolder(view);
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull StaticRVAdapter.StaticRVViewHolder holder, int position) {
+
+        StaticRVModel currentItem= models.get(position);
+        holder.imageView.setImageResource(currentItem.getImage());
+        holder.textView.setText(currentItem.getText());
+
+        holder.linearLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                row_index=position;
+                notifyDataSetChanged();
+            }
+        });
+
+        if(row_index == position){
+            holder.linearLayout.setBackgroundResource(R.drawable.static_rv_selected_bg);
+        }
+        else{
+            holder.linearLayout.setBackgroundResource(R.drawable.static_rv_bg);
+        }
+
+    }
+
+    @Override
+    public int getItemCount() {
+        return models.size();
+    }
+
+    public static class StaticRVViewHolder extends RecyclerView.ViewHolder{
+
+        TextView textView;
+        ImageView imageView;
+        LinearLayout linearLayout;
+
+        public StaticRVViewHolder(@NonNull View itemView) {
+            super(itemView);
+
+            imageView= itemView.findViewById(R.id.image);
+            textView = itemView.findViewById(R.id.textId);
+            linearLayout=itemView.findViewById(R.id.linearLayout);
+        }
+    }
+}

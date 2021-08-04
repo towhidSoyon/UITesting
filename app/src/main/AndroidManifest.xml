@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.2UiTesting">
-        <activity android:name=".SimpleNavDrawer.EasyNavActivity"></activity>
+        <activity android:name=".CollapsingToolbar.CTActivity"></activity>
+        <activity android:name=".ModernDashboard.ModernDashboardActivity" />
+        <activity android:name=".SimpleNavDrawer.EasyNavActivity" />
         <activity android:name=".navDrawer.NavActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

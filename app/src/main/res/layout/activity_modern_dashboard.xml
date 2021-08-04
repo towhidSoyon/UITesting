@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ModernDashboard.ModernDashboardActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/profileID"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintVertical_bias="0"
+            app:layout_constraintHorizontal_bias="1"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </ImageView>
+
+        <ImageView
+            android:id="@+id/notificationId"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/profileID"
+            app:layout_constraintTop_toTopOf="@id/profileID"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintVertical_bias="0"
+            app:layout_constraintHorizontal_bias="1"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/about"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </ImageView>
+
+        <TextView
+            android:id="@+id/helloTextId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"
+            android:text="Hello Foodie!"
+            android:fontFamily="sans-serif-light"
+            android:textColor="@color/black"
+            android:textSize="36sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/notificationId"
+            app:layout_constraintVertical_bias="0.0">
+
+        </TextView>
+
+        <EditText
+            android:id="@+id/searchId"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintVertical_bias="0"
+            app:layout_constraintWidth_percent=".7"
+            android:hint="Search"
+            android:textSize="14sp"
+            android:paddingLeft="20dp"
+            android:paddingTop="15dp"
+            android:paddingBottom="10dp"
+            android:elevation="4dp"
+            android:layout_width="0dp"
+            android:background="@drawable/search_bg"
+            android:layout_marginTop="15dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/helloTextId"
+            app:layout_constraintTop_toBottomOf="@+id/helloTextId">
+
+        </EditText>
+
+        <ImageView
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintVertical_bias="0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/search"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/searchId"
+            app:layout_constraintTop_toTopOf="@+id/searchId">
+
+        </ImageView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv1"
+            app:layout_constraintVertical_bias="0"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/searchId">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv2"
+            android:layout_width="match_parent"
+            app:layout_constraintVertical_bias="0"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rv1">
+
+        </androidx.recyclerview.widget.RecyclerView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</ScrollView>
